@@ -2,25 +2,33 @@ import React, { useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 
 const AddTodo = ({ addTodo }) => {
+
+    // modal show / hide
     const [show, setShow] = useState(false);
-
-    const [input, setInput] = useState('')
-    const handleInput = (e) => {
-        setInput(e.target.value)
-    }
-
-    const add = () => {
-        let newTodo = {
-            text: input
-        }
-        addTodo(newTodo)
-        setInput('')
-    }
-
 
     const toggle = () => {
         setShow(!show);
     };
+// input value
+    const [input, setInput] = useState('')
+    const handleInput = (e) => {
+        setInput(e.target.value)
+    }
+// add new todo
+    const add = () => {
+        let newTodo = {
+            text: input
+        }
+    // send the input value to the function in app js as a param
+        addTodo(newTodo)
+     // toggle to close modal after validation
+        toggle();
+     // setInput to empty again
+        setInput('')
+
+    }
+
+
     return (
         <>
             <Button variant="primary" onClick={toggle}>

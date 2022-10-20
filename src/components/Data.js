@@ -9,4 +9,4 @@ export const Data = [
     {
         text: "Learn NodeJS"
     },
-]
+]  

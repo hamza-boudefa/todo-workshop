@@ -1,14 +1,9 @@
-import React from "react";
-import {Form} from "react-bootstrap"
+import React from 'react'
 
-const Todo = ({ todo }) => {
-    return (
-        <Form style={{width:"40%", margin:"auto"}}>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label={todo.text} />
-            </Form.Group>
-        </Form>
-    );
-};
+const Todo = ({todo}) => {
+  return (
+    <div> {Todo.text} </div>
+  )
+}
 
-export default Todo;
+export default Todo
